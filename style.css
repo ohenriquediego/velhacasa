@@ -1,0 +1,359 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(#00000001,#00000063), url(bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+.container{
+    max-width: 1400px;
+    padding: 3%;
+    margin: 0 auto;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .logo{
+    font-size: 35px;
+    font-style: italic;
+    color: azure;
+    font-weight: bold;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+}
+nav ul li a{
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 19px;
+    color: azure;
+    border-radius: 30px;
+    transition: 0.6s;
+    font-size: 19px;
+}
+nav ul li a:hover{
+    background-color: rgba(0, 255, 255, 0.192); /* aqua translúcido */
+    transition: background-color 0.6s;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site{
+    padding: 50px 4%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 140px;
+}
+
+.topo-do-site h1{
+    color: white;
+    font-size: 42px;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* preto com 50% de opacidade */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.topo-do-site .txt-topo-site h1 span{
+    color: #0d048d;
+}
+
+.topo-do-site .txt-topo-site p{
+    font-size: 23px;
+    color: white;
+    margin: 30px 0;
+    background-color: rgba(0, 0, 0, 0.5); /* preto com 50% de opacidade */
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.topo-do-site .img-topo-site img{
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+
+
+@keyframes flutuar{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+/* ESTILO DO PERSONAGENS */
+section.personagens{
+    padding: 80px 4%;
+}
+
+section.personagens .flex{
+    justify-content: space-around;
+}
+
+.img-port{
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    background-position: 100% 0;
+    transition: 7s;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+}
+
+.img-port:hover{
+    background-position: 100% 100%;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000093;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    opacity: 0;
+    transition: .5s;
+}
+
+.overlay:hover{
+    opacity: 1;
+}
+
+.pdf-container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f1f1f63;
+  color: #fff;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffffffbe;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== CONTEÚDO ===== */
+main.conteudo {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  display: block;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #1f1f1f;
+  color: #fff;
+  margin-top: 20px;
+}
+
+/* ======== MEDIA QUERIES ======== */
+
+/* Tablets e abaixo */
+@media (max-width: 768px) {
+    
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #1f1f1f;
+    flex-direction: column;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    border-bottom-left-radius: 12px;
+    box-shadow: 0 0 0 transparent;
+    transition: max-height 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links.show {
+    max-height: 500px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: right;
+  }
+}
+
+
+
+
+/* Oculta o PDF por padrão */
+.pdf-mobile {
+  display: none;
+}
+
+/* Exibe apenas em celulares */
+@media (max-width: 768px) {
+  .pdf-mobile {
+    display: block;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .pdf-mobile iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+.nav-links {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: rgba(155, 12, 12, 0.918);
+  flex-direction: column;
+  width: 200px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  border-bottom-left-radius: 12px;
+  box-shadow: 0 0 0 transparent;
+  transition: max-height 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+}
+
+/* Quando aberto: */
+.nav-links.show {
+  max-height: 500px; /* altura suficiente para mostrar todo o menu */
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  animation: slideDown 0.4s ease forwards;
+}
+
+/* Animação de deslizar para baixo */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    gap: 20px;
+      flex-wrap: wrap;
+  flex: 1;
+  justify-content: flex-end;
+
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .menu-toggle {
+    display: none !important;
+  }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leitor de PDF</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .pdf-container {
+      position: relative;
+      width: 90%;
+      margin: auto;
+    }
+
+    /* Botões no canto superior direito */
+    .fullscreen-btn, .exit-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+      padding: 8px 12px;
+      background-color: #1d1f20;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      transition: 0.2s;
+    }
+
+    .fullscreen-btn:hover,
+    .exit-btn:hover {
+      background-color: #333;
+    }
+
+    #meuPDF {
+      width: 100%;
+      height: 750px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <nav class="navbar">
+    <div class="logo">Casa Velha</div>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="livro.html">Livro</a></li>
+      <li><a href="personagens.html">Personagens</a></li>
+      <li><a href="autor.html">Autor</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <div class="container">
+  </div>
+
+  <main class="pdf-container">
+    <!-- Botões -->
+    <button id="fullscreenBtn" class="fullscreen-btn" onclick="abrirTelaCheia()">📖 Tela Cheia</button>
+    
+
+    <!-- PDF -->
+    <embed id="meuPDF" src="bv000168.pdf" type="application/pdf" />
+  
+
+  </main>
+
+  <script>
+    const pdf = document.getElementById("meuPDF");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
+    const exitFullscreenBtn = document.getElementById("exitFullscreenBtn");
+
+    function abrirTelaCheia() {
+      if (pdf.requestFullscreen) {
+        pdf.requestFullscreen();
+      } else if (pdf.webkitRequestFullscreen) {
+        pdf.webkitRequestFullscreen();
+      } else if (pdf.mozRequestFullScreen) {
+        pdf.mozRequestFullScreen();
+      } else if (pdf.msRequestFullscreen) {
+        pdf.msRequestFullscreen();
+      }
+    }
+
+    // Detecta mudanças de modo tela cheia
+    document.addEventListener("fullscreenchange", () => {
+      const emTelaCheia = !!document.fullscreenElement;
+      fullscreenBtn.style.display = emTelaCheia ? "none" : "inline-block";
+      exitFullscreenBtn.style.display = emTelaCheia ? "inline-block" : "none";
+    });
+  </script>
+  <footer>
+  <p>© 2025 Casa Velha - Todos os direitos reservados.</p>
+</footer>
+
+<script src="menu.js"></script>
+
+</body>
+</html>
